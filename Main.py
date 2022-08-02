@@ -49,3 +49,10 @@ class Evaluate:
                 result = a / b
             self.push(result)
     return int(self.stack[0])
+postfix_expression = input()  # Read postfix expression
+tokens = postfix_expression.split()
+evaluate = Evaluate(len(tokens))
+if evaluate.validate_postfix_expression(tokens):
+    print(evaluate.evaluate_postfix_expression(tokens))
+else:
+    print('Invalid postfix expression')
